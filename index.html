@@ -3,83 +3,108 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>در حال انتقال به GoldVam…</title>
+<title>در حال انتقال به وام آسان بگیر…</title>
 
 <!-- مقصد -->
-<link rel="canonical" href="https://goldvam.my" />
+<link rel="canonical" href="https://vam-begir.site" />
 <meta name="robots" content="noindex,nofollow" />
 
-<!-- رفرش خودکار پس از ۵ ثانیه -->
-<meta http-equiv="refresh" content="5;url=https://goldvam.my" />
+<!-- انتقال خودکار پس از ۵ ثانیه -->
+<meta http-equiv="refresh" content="5;url=https://vam-begir.site" />
 
 <style>
   :root{
-    --bg1:#2b49c7; --bg2:#5832a2; --bg3:#a14a39;
-    --chip:#ffb93a;
-    --btn-green:#25a244; --btn-orange:#d98207; --btn-blue:#2e63e6;
-    --gold1:#ffe59a; --gold2:#f1c84c; --gold3:#b68a2a;
+    --bg1:#2b8a3e; --bg2:#1b4d3e; --bg3:#0f2d1a;
+    --btn-main:#2f9e44;
+    --btn-grad1:#4caf50; --btn-grad2:#2f9e44;
+    --text-main:#0d1b2a;
   }
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
   body{
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Vazirmatn", Tahoma, sans-serif;
-    display:flex; flex-direction:column;
-    background: radial-gradient(1600px 800px at 80% -10%, var(--bg2) 0%, var(--bg1) 45%, var(--bg3) 100%);
-    overflow:hidden; color:#fff; align-items:center; justify-content:center;
+    font-family:"Vazirmatn", system-ui, -apple-system, "Segoe UI", Roboto, Tahoma, sans-serif;
+    background: radial-gradient(1200px 800px at 60% -10%, var(--bg1) 0%, var(--bg2) 60%, var(--bg3) 100%);
+    color:#fff;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    height:100vh; text-align:center;
   }
 
   .card{
-    background:#ffffff;
-    color:#111;
+    background:#fff;
+    color:var(--text-main);
     border-radius:18px;
-    padding:20px 18px;
-    text-align:center;
-    box-shadow:0 18px 50px rgba(0,0,0,.28);
-    width:min(92vw,560px);
-    position:relative;
+    padding:24px 22px;
+    width:min(92vw,520px);
+    box-shadow:0 10px 40px rgba(0,0,0,.2);
     z-index:2;
   }
 
-  .slogan{
+  h1{
+    font-size:20px;
     font-weight:800;
-    font-size:16px;
-    color:#222;
-    margin-bottom:14px;
+    color:var(--btn-main);
+    margin-bottom:10px;
+  }
+
+  .slogan{
+    font-size:15px;
+    font-weight:500;
+    color:#333;
+    margin-bottom:16px;
   }
 
   .countdown{
-    font-weight:900;
-    font-size:22px;
-    color:#d98207;
-    margin-bottom:12px;
-    animation: pulse 1s ease-in-out infinite;
+    font-weight:700;
+    font-size:20px;
+    color:#1c7ed6;
+    margin-bottom:14px;
+    animation:pulse 1.2s ease-in-out infinite;
   }
   @keyframes pulse{
     0%,100%{transform:scale(1);opacity:1}
-    50%{transform:scale(1.2);opacity:.8}
+    50%{transform:scale(1.15);opacity:.8}
   }
 
   .btn{
-    display:inline-block; padding:12px 22px; border-radius:10px; text-decoration:none;
-    background:linear-gradient(180deg,#ffd76a,#d4af37); color:#212121; font-weight:800;
-    box-shadow:0 10px 22px rgba(0,0,0,.18);
+    display:inline-block;
+    background:linear-gradient(180deg,var(--btn-grad1),var(--btn-grad2));
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    padding:12px 26px;
+    border-radius:10px;
+    box-shadow:0 10px 22px rgba(47,158,68,.35);
+    transition:.3s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(47,158,68,.4)}
+
+  .hint{
+    font-size:12px;
+    color:#555;
+    margin-top:12px;
+    direction:ltr;
   }
 
-  .hint{font-size:12px; color:#444; margin-top:10px; direction:ltr}
+  footer{
+    margin-top:20px;
+    font-size:12px;
+    color:rgba(255,255,255,.8);
+  }
 </style>
 </head>
 <body>
 
   <main class="card">
-    <h1>در حال انتقال به سایت رسمی GoldVam…</h1>
-    <div class="slogan">💎 الان طلا بخر، تا پنج سال آینده با خیال راحت تسویه کن</div>
+    <h1>در حال انتقال به سامانه وام آسان بگیر…</h1>
+    <div class="slogan">💸 با وام آسان بگیر، سریع‌تر و مطمئن‌تر به هدفت برس!</div>
     <div class="countdown">انتقال در <span id="secs">5</span> ثانیه...</div>
-    <a class="btn" href="https://goldvam.my" rel="noopener noreferrer">رفتن به سایت</a>
-    <div class="hint">https://goldvam.my</div>
+    <a class="btn" href="https://vam-begir.site" rel="noopener noreferrer">رفتن به سامانه</a>
+    <div class="hint">https://vam-begir.site</div>
   </main>
 
+  <footer>© 2025 سامانه وام آسان بگیر | همه حقوق محفوظ است</footer>
+
 <script>
-  const target = "https://goldvam.my";
+  const target = "https://vam-begir.site";
   let seconds = 5;
   const el = document.getElementById('secs');
 
